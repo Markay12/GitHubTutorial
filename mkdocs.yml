@@ -1,0 +1,9 @@
+site_name: GitHub Guide
+
+theme:
+  features:
+    - navigation.instant
+
+
+theme:
+  name: material
