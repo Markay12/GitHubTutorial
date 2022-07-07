@@ -1,9 +1,90 @@
-site_name: GitHub Guide
+site_name: Guide to GitHub
+
+
 
 theme:
   features:
+
+    # clicks on all internal links will be intercepted and dispatched via XHR without fully reloading the page
     - navigation.instant
 
+    # documents can be directly attached to sections
+    - navigation.indexes
+
+    # when anchor following for the table of contents in enabled, the sidebar is automatically scrolled so that
+    # the active anchor is always visible
+    - toc.follow
+
+    # table of contents is awlays rendered as part of the navigation sidebar on the left
+    - toc.integrate
+
+    # a back-to-top button is centered on the screen when the user scrolls down the site
+    - navigation.top
+
+
+    # the header is automatically hidden when the user scrolls past a certain threshold
+    - header.autohide
+
+
+# remove the header
+extra:
+  generator: false
+
+
+plugins:
+  - search:
+      lang: en
 
 theme:
+
+  favicon: assets/images/github_favicon.png
+
+  font: 
+    text: Roboto
+
+  palette:
+
+    # dark mode toggle
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: darkblue
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to Dark Mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: darkblue
+      accent: white
+      toggle:
+        icon: material/brightness-4
+        name: Switch to Light Mode
+
+
+
+
   name: material
+
+
+
+
+
+nav: 
+  - 'Git vs. GitHub': gitvgithub.md
+  - 'Git Commit': commit.md
+  - 'Git Branches': branch.md
+  - 'Git Diff and Git Stash': diff_stash.md
+  - 'Undoing Changes and Time Traveling': undochange.md
+  - 'GitHub Basics': basics.md
+  - 'README Files': readmefiles.md
+  - 'Workflows': workflows.md
+  - 'Rebasing': rebasing.md
+  - 'Git Tags': tags.md
+  - '.git Files': gitfiles.md
+
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
