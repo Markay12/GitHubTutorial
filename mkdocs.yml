@@ -38,6 +38,7 @@ plugins:
 theme:
 
   favicon: assets/images/github_favicon.png
+  logo: assets/images/github_favicon.png
 
   font: 
     text: Arial

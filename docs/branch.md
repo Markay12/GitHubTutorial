@@ -49,3 +49,62 @@ This command will create the new branch based off where you are right now and th
 ## Merging Branches
 
 A branch works in its own self contained context. However, at some point we want to add the new features we coded back into the original project.
+
+To do this, you use the `git merge` command.
+
+The master branch is usually the source branch, so that is what is going to be used here. The 'master' branch should be the most stable and working branch in the repository.
+
+This means it is good to create a branch off of master to work on your features and once you know they work, you can add them back to the master branch. Adding these changes back to the master branch is called merging.
+
+You want to move to the receiving branch before you merge the two together. This means we want to be in the master branch before we merge the feature branch into it.
+
+Consider the two branches master and feature. We want to switch to the master branch, then merge the feature branch into this one. This type of merge is called a fast forward merge where we are not worrying about any other merges or conflicts with other people.
+
+Order of commands:
+
+```
+git switch master
+
+git merge feature
+```
+
+The merged branch (feature) will stay. This just updates the master branch to match the feature branch.
+
+### Generate Merge Commits
+
+When doing merges, you may be missing new commits to the master branch. This starts the conversation of merge conflicts which can happen a few ways.
+
+1. Two people changed the same line of the master branch and try to merge in their changes.
+2. There are no conflicting changes, but lines were moved around.
+
+The second one is easier to explain and would just require a commit message for the merge to explain what changed/happened. The first is a much larger issue that is further discussed.
+
+### Merge Conflicts
+
+This happens when two or more people modify the same two files in different branches and try to merge them back to the same branch.
+
+When this happens, you must decide what to keep/remove from that merge. These changes have to be made manually and a prompt will open showing you the code you must choose to keep or remove. These merge conflicts look as such...
+
+```
+<<<<<<<<<<< HEAD
+
+My name is Mark and I like cats.
+
+===========
+
+My name is Mark and I DO NOT LIKE cats.
+
+>>>>>>>>>>> FEATURE
+```
+
+From here, you choose what to change and what to keep. The first message is what you have on your local file and the second one is what is uploaded to GitHub. After you know what you want to keep you remove the `<<<<<<< HEAD` and similar added syntax.
+
+Then you can commit and push these changes with updating the conflict.
+
+The process is as follows:
+
+1. Open file(s) with merge conflicts.
+2. Edit to remove conflicts. Decide what to keep and/or remove.
+3. Remove conflict markers.
+4. Add changes.
+5. Commit changes.
