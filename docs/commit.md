@@ -43,3 +43,17 @@ It is said that commits should be atomic. This means that all commits should be 
 This makes rolling back previous changes much easier at a later time.
 
 ## Use Past or Present Tense
+
+It is generally noted that you are to use present tense when writing commit messages. Rather than writing a message that says something was added, you want to say what is happenening. Examples of this include
+
+Use:
+
+`git commit README.md -m "Add comment to readme file"`
+
+Instead of:
+
+`git commit README.md -m "Added comments to the README file"`
+
+You do want to keep in mind how your company or group does their commits. These can vary by team, but should be the same across the team structure.
+
+When doing a commit without the -m message format, you will open a general VIM editor. From here you can just change the message in the editor and write it.
