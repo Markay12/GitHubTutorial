@@ -57,3 +57,33 @@ Instead of:
 You do want to keep in mind how your company or group does their commits. These can vary by team, but should be the same across the team structure.
 
 When doing a commit without the -m message format, you will open a general VIM editor. From here you can just change the message in the editor and write it.
+
+![Commit with VIM](assets/images/commit_with_vim.png)
+
+## Git Log
+
+One of the most important ways to view your commits is with the command `git log`. Every time you make a commit, that commit is given a hash that allows you to revisit, delete and perform various other actions.
+
+To view this commit hash and your previous commits you can use the git log command, which looks something like this.
+
+![Git log Example](assets/images/git_log_example.png)
+
+The commit hash are the yellow lines in that photo and correspond with those commits. You can also navigate back from commits based on where the head of your project is. This uses the format HEAD~1 which goes back 1 commit from head and can change. This format will be explained later.
+
+There are far more git log commands that you can use. Just like any other command you can do `git log --help` to gather more information on the command.
+
+Give `git log --oneline` a chance!
+
+## Fix Commits with Amend
+
+If you forgot to do something in your previous commit or wanted to change something you can use the amend/redo command in git.
+
+To do this we still use the `git commit` command but add `--amend` to the end of it. This is how you "redo" a commit.
+
+`git commit --amend`
+
+## Ignore Files in Commit
+
+To ignore files in a git repository there is a special file to define those files. This file is the `.gitignore` file. The directories and files that are listed here will not be tracked by Git and GitHub.
+
+This is great when you want to secure some information or a file. Secrets/API keys will not show up if they are included in this file, which gives privacy to the comapany/creators. This also allows for package and dependency hiding if the project is not completely open source material.

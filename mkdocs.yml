@@ -40,7 +40,7 @@ theme:
   favicon: assets/images/github_favicon.png
 
   font: 
-    text: Roboto
+    text: Arial
 
   palette:
 
